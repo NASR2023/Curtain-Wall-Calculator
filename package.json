@@ -1,0 +1,38 @@
+{
+  "name": "curtain-wall-calculator",
+  "version": "1.0.0",
+  "description": "Offline desktop version of the Curtain Wall Calculator",
+  "main": "main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.curtainwall.calculator",
+    "productName": "Curtain Wall Calculator",
+    "asar": true,
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
